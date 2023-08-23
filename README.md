@@ -84,3 +84,7 @@ the relationship between raredisease tarsal tunnel syndrome and anaphor "the dis
 ```
 
 The pre processed data can also be found [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
+
+### Training  
+
+The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link) from our google drive.
