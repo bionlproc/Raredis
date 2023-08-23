@@ -8,7 +8,7 @@ The full modified dataset is availabe at this [link](https://drive.google.com/dr
 
 ## Seq2rel
 ### 1. Preparing the environment
-Please follow original seq2rel repo for installation and enviomenet preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
+Please follow original seq2rel repo for installation and envioment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
 
 ### 2. Prepare data
 We follow the same linearization schema as original author.  
@@ -55,8 +55,8 @@ Please follow the original github repo to install the necessary libraries to wor
 You can also follow our google colab working directory to follow the code for installation steps.
 
 ### 2. Data Prep
-1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target.  
-2. Run [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to pre process the script for the BioGPT rel-is input format. This will output .pmid, .x and .y files for each split.   
+1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target sequence.  
+2. Run [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to pre process the JSON data in rel-is input format. This will output .pmid, .x and .y files for each split.   
 split.pmid: It contains the document name  
 split.x: It contains the input string  
 split.y: it contains the target string  
