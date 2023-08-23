@@ -3,7 +3,7 @@
 This repository contains code for our paper:  Comparison of pipeline, sequence-to-sequence, and generative language models for end-to-end relation extraction: experiments with the rare disease use-case.
 
 # Dataset
-The full original dataset is availabe at this link: [Raredis Modified dataset](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing).
+The full modified dataset is availabe at this [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing).
 
 
 ## Seq2rel
@@ -52,6 +52,6 @@ For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://githu
 ### Requirements and Installation
 
 Please follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT).  
-You can also follow our google colab link to follow the installation steps.
+You can also follow our google colab working directory to follow the code for installation steps.
 
 ### Data Prep
