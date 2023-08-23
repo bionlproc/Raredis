@@ -8,10 +8,10 @@ The full original dataset is availabe at this link: [Raredis Modified dataset](h
 
 ## Seq2rel
 ### 1. Prepare data
-Seq2rel/data_prep_REL.py will generate files in the desired format for seq2rel. The input files are present in Seq2rel/data folder
+[Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel. The input files are present in [Seq2rel/data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/data) folder
 
 ### 2. Model Training
 
 
 ### 3. Evaluation
-For overall and per relation score, run Seq2rel/eval_rel_type.py. Make sure you change the path to the trained model and gold test file.
+For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel). Make sure you change the path to the trained model and gold test file.
