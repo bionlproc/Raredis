@@ -49,4 +49,9 @@ For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://githu
 
 
 ## BioGPT
+### Requirements and Installation
 
+Please follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT).  
+You can also follow our google colab link to follow the installation steps.
+
+### Data Prep
