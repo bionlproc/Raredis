@@ -87,4 +87,4 @@ The pre processed data can also be found [here](https://github.com/shashank14019
 
 ### Training  
 
-The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link) from our google drive.
+The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.
