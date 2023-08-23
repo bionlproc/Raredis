@@ -11,7 +11,7 @@ The full original dataset is availabe at this link: [Raredis Modified dataset](h
 [Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel. The pre processed input files are present in [Seq2rel/data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/data) folder
 
 ### 2. Model Training
-We trained our model on google Colab pro+ using A100 GPU.
+We trained our model on google Colab pro+ using A100 GPU.  
 a. Git clone the John Giorgi's seq2rel github repo in the desired location in your drive[Seq2rel repo](https://github.com/JohnGiorgi/seq2rel)
 
 ### 3. Evaluation
