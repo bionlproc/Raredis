@@ -61,4 +61,24 @@ split.pmid: It contains the document name
 split.x: It contains the input string  
 split.y: it contains the target string  
 
-The pre processed data is also avaliable [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
+For example. 
+Original text
+```
+the incidence and prevalence of tarsal tunnel syndrome is unknown. the disorder is believed to affect males and females in equal numbers.
+```
+
+split.pmid contains
+```
+Tarsal-Tunnel-Syndrome
+```  
+ 
+split.x contains
+```
+consider the abstract: $ the incidence and prevalence of tarsal tunnel syndrome is unknown. the disorder is believed to affect males and females in equal numbers. $ from the given abstract, find all the entities and relations among them. do not generate any token outside the abstract.
+```  
+split.y contains
+```
+the relationship between raredisease tarsal tunnel syndrome and anaphor "the disorder" is antecedent.
+```
+
+The pre processed data can also be found [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
