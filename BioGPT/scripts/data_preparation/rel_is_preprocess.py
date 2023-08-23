@@ -1,8 +1,7 @@
 import os
 import json
 
-data_dir = "/Users/shashankgupta/Desktop/BioGPT_inputTest/Raredis_corrected_annotation/final_corrections" \
-           "/without_token_copy_instruction/with_ent_type"
+data_dir = "path to save pre process files"
 
 
 def sort_triples(triples, text):

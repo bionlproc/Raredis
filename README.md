@@ -55,4 +55,10 @@ Please follow the original github repo to install the necessary libraries to wor
 You can also follow our google colab working directory to follow the code for installation steps.
 
 ### 2. Data Prep
-First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target.
+1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target.  
+2. Then run [BioGPT/scripts/data_preparation/nat_lan_preprocess.py] or [BioGPT/scripts/data_preparation/rel_is_preprocess.py] to pre process the script for the BioGPT input format. These files will output .pmid, .x and .y files for each split.   
+split.pmid: It contains the document name  
+split.x: It contains the input string
+split.y: it contains the target string
+
+The pre processed data is avaliable [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
