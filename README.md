@@ -8,7 +8,7 @@ The full original dataset is availabe at this link: [Raredis Modified dataset](h
 
 ## Seq2rel
 ### 1. Preparing the environment
-Please follow original seq2rel repo for installing guidelines [Seq2rel repo](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
+Please follow original seq2rel repo for installation and enviomenet preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
 
 ### 2. Prepare data
 We follow the same linearization schema as original author.  
