@@ -17,7 +17,7 @@ total_rel_annotation_errors_unfixed = 0
 final_output_string = ""
 dump_file = ""
 counter = 0
-logging.basicConfig(filename="/Users/shashankgupta/Documents/Raredis/seq2rel/data/validWarning.log", level=logging.DEBUG)
+logging.basicConfig(filename="home/validWarning.log", level=logging.DEBUG)
 
 
 def get_paired_files(all_files):
@@ -46,7 +46,7 @@ def get_paired_files(all_files):
         txt_present = True if f"{name}.txt" in matching_filenames else False
         ann_present = True if f"{name}.ann" in matching_filenames else False
 
-        # Put in list or raise exception
+        # Put in the list or raise an exception
         if txt_present and ann_present:
             paired_files.append((f"{name}.txt", f"{name}.ann"))
         elif txt_present and not ann_present:
@@ -58,8 +58,8 @@ def get_paired_files(all_files):
 
     return paired_files
 
-
-data_directory = "/Users/shashankgupta/Documents/Raredis/seq2rel/data/valid"
+# Path to data folder which contains both input_text and ann folder
+data_directory = "/home/seq2rel/data/train"
 all_files = [
     f"{data_directory}/{name}" for name in listdir(data_directory)
 ]
@@ -214,5 +214,5 @@ print("Total Entities: ", total_entities)
 print("Total Relations: ", total_relations)
 
 # Write out doc dictionaries
-# with open("/Users/shashankgupta/Documents/Raredis/seq2rel/data/valid.txt", "w") as file:
-#     file.writelines(dump_file)
+with open("/home/seq2rel/data/train.txt", "w") as file:
+    file.writelines(dump_file)
