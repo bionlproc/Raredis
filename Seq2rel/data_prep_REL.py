@@ -58,7 +58,8 @@ def get_paired_files(all_files):
 
     return paired_files
 
-# Path to data folder which contains both input_text and ann folder
+# Move all the .txt files and .ann from their respective folders in one location
+# For example, 600 files in .ann and 600 files in .txt, move them to one location so directory has 1200 files combined
 data_directory = "/home/seq2rel/data/train"
 all_files = [
     f"{data_directory}/{name}" for name in listdir(data_directory)
