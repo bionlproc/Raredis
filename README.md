@@ -49,9 +49,10 @@ For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://githu
 
 
 ## BioGPT
-### Requirements and Installation
+### 1. Requirements and Installation
 
 Please follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT).  
 You can also follow our google colab working directory to follow the code for installation steps.
 
-### Data Prep
+### 2. Data Prep
+## First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target.
