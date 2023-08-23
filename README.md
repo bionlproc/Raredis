@@ -2,7 +2,7 @@
 
 This repository contains code for our paper:  Comparison of pipeline, sequence-to-sequence, and generative language models for end-to-end relation extraction: experiments with the rare disease use-case.
 
-## Dataset
+# Dataset
 The full original dataset is availabe at this link: [Raredis Modified dataset](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing).
 
 
@@ -46,3 +46,7 @@ our model train google colab file here [link](https://colab.research.google.com/
 
 ### 4. Evaluation
 For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel). Make sure you change the path to the trained model and gold test file.
+
+
+## BioGPT
+
