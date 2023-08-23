@@ -65,18 +65,20 @@ For example.
 Original text
 ```
 the incidence and prevalence of tarsal tunnel syndrome is unknown. the disorder is believed to affect males and females in equal numbers.
-```
+```  
 
-split.pmid contains
+Using rel_is_preprocess.py with enabling copy instruct and enabling ent type for the entities will generate  
+
+split.pmid that contains
 ```
 Tarsal-Tunnel-Syndrome
 ```  
  
-split.x contains
+split.x that contains
 ```
 consider the abstract: $ the incidence and prevalence of tarsal tunnel syndrome is unknown. the disorder is believed to affect males and females in equal numbers. $ from the given abstract, find all the entities and relations among them. do not generate any token outside the abstract.
 ```  
-split.y contains
+split.y that contains
 ```
 the relationship between raredisease tarsal tunnel syndrome and anaphor "the disorder" is antecedent.
 ```
