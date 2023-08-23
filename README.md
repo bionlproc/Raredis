@@ -17,7 +17,7 @@ Datasets are tab-separated files where each example is contained on its own line
 ```
 SCAN1 has been identified in a single Saudi Arabian family. It has not been identified in other ataxic individuals. The diagnosis of SCAN1 is made on history and clinical signs as listed above. DNA testing for mutations in TDP1 is only available on a research basis.	SCAN1 @RAREDISEASE@ It @ANAPHOR@ @Anaphora@ 
 ```  
-[Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel. Move all the .txt files and .ann files of each split in different folders.The pre processed input files are present in [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
+[Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel.The pre processed input files are present in [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
 
 ### 3. Model Training
 We trained our model on google Colab pro+ using A100 GPU.  
