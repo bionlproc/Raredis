@@ -216,7 +216,7 @@ Git clone the repo
 !git clone https://github.com/stanford-crfm/BioMedLM.git
 ```  
 
-Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum). Deepspeed config for cpu offloading is present here
+Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum). Deepspeed config for cpu offloading is present [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/deepspeed_config).
 
 Go to ./textgen/gpt2. To finetune, run:
 ```
