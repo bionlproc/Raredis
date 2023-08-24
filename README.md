@@ -153,7 +153,7 @@ os.mkdir("Raredis")
 # command to copy files created from rel_is_preprocess.py (.pmid, .x and.y files)
 %cp -av "content/drive/Mydrive/raw" "/content/BioGPT/data/Raredis/"
 ```
-The file tree should look like this:    
+The file tree should look like this:      
 
 <img width="314" alt="Screenshot 2023-08-24 at 12 41 21 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/98b0f362-9a76-4db4-96e1-6297d9ab6f55">
 
