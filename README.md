@@ -158,10 +158,14 @@ The file tree should look like this:
 <img width="314" alt="Screenshot 2023-08-24 at 12 41 21 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/98b0f362-9a76-4db4-96e1-6297d9ab6f55">
 
 
-3. Copy the [Re-Raredis](https://github.com/shashank140195/Raredis/tree/main/BioGPT/RE-Raredis) under the subfolder "examples" in the BioGPT path.  
+3. Copy the [Re-Raredis](https://github.com/shashank140195/Raredis/tree/main/BioGPT/RE-Raredis) under the subfolder "examples" in the BioGPT path. This folder contains the bash files to pre-process, train and infer.
+```
+%cp -av "content/drive/mydrive/RE-Raredis" "/content/BioGPT/examples/"
+```  
 
 4. Run [preprocess.sh](https://github.com/shashank140195/Raredis/blob/main/BioGPT/RE-Raredis/preprocess.sh)  
 ```
+os.chdir("/content/BioGPT/examples/RE-Raredis")
 !bash preprocess.sh
 ```  
 The above command will create 1 more folder named "relis-bin" under the same folder as raw path.
