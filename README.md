@@ -190,3 +190,5 @@ The above command will create 1 more folder named "relis-bin" under the same fol
 7. Post-processing  
 After inference, run the [BioGPT/scripts/postprocess](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/postprocess) to fetch the inference in the desired JSON format.
 
+8. Evaluation 
+Run [BioGPT/scripts/eval/eval_per_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/eval) to get the overall and individual relation type scores.
