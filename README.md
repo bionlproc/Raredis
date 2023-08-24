@@ -250,7 +250,15 @@ deepspeed finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/outpu
   --greater_is_better True \
   --adam_beta2 0.98
 ```
+
+### 3. Inference
+
 After finetuning, run generation on test set by:
 ```
 python -u run_generation_batch.py --max_source_length -1 --length 510 --model_name_or_path={finetune_checkpoint} --num_return_sequences 1 --stop_token [SEP] --tokenizer_name={finetune_checkpoint} --task_mode=meqsum --control_mode=no --tuning_mode finetune --gen_dir /home/ubuntu/BioMedLM/temp500 --batch_size 1 --temperature 1.0
 ``` 
+
+Above code will generate test_beam.txt and test_gold.txt. Save these files to run evaluation.
+
+### 4. Evaluation
+Run [BioMedLM/scripts/eval/eval_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/eval) to run evaluation on predicted sequence. 
