@@ -163,7 +163,7 @@ The file tree should look like this:
 %cp -av "content/drive/mydrive/RE-Raredis" "/content/BioGPT/examples/"
 ```
 
-The file structure should look like this:  
+The file structure should look like this:    
 
 <img width="528" alt="Screenshot 2023-08-24 at 1 00 36 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/7ad81981-ad26-4f5a-a693-9172e05b9804">
 
