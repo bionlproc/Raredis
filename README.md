@@ -172,18 +172,20 @@ The file structure should look like this:
 os.chdir("/content/BioGPT/examples/RE-Raredis")
 !bash preprocess.sh
 ```  
-The above command will create 1 more folder named "relis-bin" under the same folder as raw path.
+The above command will create 1 more folder named "relis-bin" under the same folder as the raw path as shown below:
+
+<img width="517" alt="Screenshot 2023-08-24 at 1 04 10 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/86aa1ad5-4942-4fb6-add7-2e68eee9095d">
 
 5. Run train.sh to begin training the model
 ```
 !bash train.sh
 ```  
 
-6. After training run infer.sh. This script run inference on the test.txt and generates .detok file
+6. After training run infer.sh. This script runs inference on the test.txt and generates a .detok file
 ```
 !bash infer.sh
 ```  
 
-7. Post processing  
+7. Post-processing  
 After inference, run the [BioGPT/scripts/postprocess](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/postprocess) to fetch the inference in the desired json format.
 
