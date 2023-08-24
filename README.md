@@ -20,7 +20,7 @@ SCAN1 has been identified in a single Saudi Arabian family. It has not been iden
 [Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel.The pre processed input files are present in [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
 
 ### 3. Model Training
-We trained our model on google Colab pro+ using A100 GPU.  
+We trained our model on Google Colab Pro+ using A100 GPU.  
 Git clone the John Giorgi's seq2rel github repo in the desired location in your drive [Seq2rel repo](https://github.com/JohnGiorgi/seq2rel)  
 
 
@@ -28,7 +28,7 @@ Git clone the John Giorgi's seq2rel github repo in the desired location in your 
 
 To train the model, use the [`allennlp train`](https://docs.allennlp.org/main/api/commands/train/) command with [one of our configs](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/config) (or write your own!)
 
-For example, to train a model on the Raredis, first, preprocess the data mentioned in previous step or directly use the already pre processed data from [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
+For example, to train a model on the Raredis, first, preprocess the data mentioned in the previous step or directly use the already pre-processed data from [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
 
 Then, call `allennlp train` with the [Raredis config we have provided](https://github.com/shashank140195/Raredis/blob/main/Seq2rel/config/raredis_bertlarge_config.jsonnet)
 
@@ -42,18 +42,18 @@ allennlp train "training_config/raredis.jsonnet" \
 ```
 
 The best model checkpoint (measured by micro-F1 score on the validation set), vocabulary, configuration, and log files will be saved to `--serialization-dir`. This can be changed to any directory you like. You can also follow
-our model train google colab file here [link](https://colab.research.google.com/drive/1sShXyD-E9CnHZKzk7ZhJekqlRdPd6IqH?usp=sharing)  
+our model train google collab file here [link](https://colab.research.google.com/drive/1sShXyD-E9CnHZKzk7ZhJekqlRdPd6IqH?usp=sharing)  
 
 ### 4. Evaluation
 For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel). Make sure you change the path to the trained model and gold test file.
 
 
 ## BioGPT
-All the Experiments are done in google colab pro+ using A100 GPU.
+All the Experiments are done in Google Colab Pro+ using A100 GPU.
 
 ### 1. Data Prep
-1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target sequence.  
-2. Run [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to pre process the JSON data in rel-is input format. This will output .pmid, .x and .y files for each split.   
+1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and adds/removes entity type for the target sequence.  
+2. Run [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to pre-process the JSON data in rel-is input format. This will output .pmid, .x, and .y files for each split.   
 split.pmid: It contains the document name  
 split.x: It contains the input string  
 split.y: it contains the target string  
@@ -80,7 +80,7 @@ split.y that contains
 the relationship between raredisease tarsal tunnel syndrome and anaphor "the disorder" is antecedent.
 ```
 
-The pre processed data can also be found [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
+The pre-processed data can also be found [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
 
 ### Training  
 
@@ -90,7 +90,7 @@ Git clone the BioGPT repo
 !git clone https://github.com/microsoft/BioGPT.git
 ```  
 
-and then follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT) or run the following cell.
+and then follow the original GitHub repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT) or run the following cell.
 ```  
 !git clone https://github.com/pytorch/fairseq  
 import os
