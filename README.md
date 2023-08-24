@@ -7,17 +7,23 @@ The full modified dataset is available at this [link](https://drive.google.com/d
 
 
 ## Seq2rel
+All the Experiments are done in Google Colab Pro+ using A100 GPU.
+
 ### 1. Preparing the environment
-Please follow the original seq2rel repo for installation and environment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
+Please follow the original seq2rel repo for installation and environment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)
+Alternatively, run:  
+```
+pip install git+https://github.com/JohnGiorgi/seq2rel.git
+```  
 
 ### 2. Prepare data
-We follow the same linearization schema as the original author.  
+We follow the same linearization schema as provided by the authors.  
 Datasets are tab-separated files where each example is contained on its own line. The first column contains the text, and the second column contains the relations. Relations themselves must be serialized to strings.
 
 ```
 SCAN1 has been identified in a single Saudi Arabian family. It has not been identified in other ataxic individuals. The diagnosis of SCAN1 is made on history and clinical signs as listed above. DNA testing for mutations in TDP1 is only available on a research basis.	SCAN1 @RAREDISEASE@ It @ANAPHOR@ @Anaphora@ 
 ```  
-[Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel.The pre processed input files are present in [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
+[Seq2rel/data_prep_REL.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel) will generate files in the desired format for seq2rel. The pre processed input files are present in [Seq2rel/preprocees_data](https://github.com/shashank140195/Raredis/tree/main/Seq2rel/preprocees_data) folder.
 
 ### 3. Model Training
 We trained our model on Google Colab Pro+ using A100 GPU.  
@@ -52,7 +58,7 @@ For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://githu
 All the Experiments are done in Google Colab Pro+ using A100 GPU.
 
 ### 1. Data Prep
-1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and adds/removes entity type for the target sequence.  
+1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the original files in the JSON format. This script adds/removes the instruction to the input sequence and adds/removes entity type for the target sequence.  
 2. Run [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to pre-process the JSON data in rel-is input format. This will output .pmid, .x, and .y files for each split.   
 split.pmid: It contains the document name  
 split.x: It contains the input string  
