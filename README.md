@@ -213,7 +213,7 @@ Run [BioMedLM/scripts/databuilder](https://github.com/shashank140195/Raredis/tre
 
 Git clone the repo  
 ```
-https://github.com/stanford-crfm/BioMedLM.git
+!git clone https://github.com/stanford-crfm/BioMedLM.git
 ```  
 
 Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum). Deepspeed config for cpu offloading is present here
