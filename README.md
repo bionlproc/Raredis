@@ -49,10 +49,15 @@ For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://githu
 
 
 ## BioGPT
+All the Experiments are done in google colab pro+ using A100 GPU.
 ### 1. Requirements and Installation
+Git clone the BioGPT repo 
+```  
+!git clone https://github.com/microsoft/BioGPT.git
+```  
 
-Please follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT).  
-You can also follow our google colab working directory to follow the code for installation steps.
+and then follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT).  
+You can also follow our google colab working directory to follow the code for installation steps [here](https://colab.research.google.com/drive/1sMAbgWi-paABrweJO_fe5edz1r2uAEPZ?usp=sharing).
 
 ### 2. Data Prep
 1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target sequence.  
