@@ -130,6 +130,17 @@ os.chdir("checkpoints")
 !tar -zxvf Pre-trained-BioGPT.tgz
 ```
 
+if the above URL doesn't work, (sometimes public access error), try running below code to copy the BioGPT model from google drive to google colab
+```
+os.chdir("/content/BioGPT/")
+os.mkdir("checkpoints")
+os.chdir("checkpoints")
+os.mkdir("Pre-trained-BioGPT")
+
+# copy the model checkpoint from google drive
+%cp -av "/content/drive/MyDrive/BioGPT/pre_trained_model_med/checkpoint.pt" "/content/BioGPT/checkpoints/Pre-trained-BioGPT"
+```
+
 2. Create a folder name "Raredis" under the data subfolder in the BioGPT path and paste the [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it.
 
 3. Copy the [Re-Raredis](https://github.com/shashank140195/Raredis/tree/main/BioGPT/RE-Raredis) under the subfolder "examples" in the BioGPT path.  
