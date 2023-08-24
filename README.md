@@ -141,7 +141,7 @@ os.mkdir("Pre-trained-BioGPT")
 %cp -av "/content/drive/MyDrive/BioGPT/pre_trained_model_med/checkpoint.pt" "/content/BioGPT/checkpoints/Pre-trained-BioGPT"
 ```
 
-The model path hierarchy should look like this:
+The model path hierarchy should look like this:  
 <img width="278" alt="Screenshot 2023-08-24 at 12 31 10 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/0b407e6e-2485-43f9-bf76-f36408337cfa">
 
 
