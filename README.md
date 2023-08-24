@@ -10,7 +10,7 @@ The full modified dataset is available at this [link](https://drive.google.com/d
 All the Experiments are done in Google Colab Pro+ using A100 GPU.
 
 ### 1. Preparing the environment
-Please follow the original seq2rel repo for installation and environment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)
+Please follow the original seq2rel repo for installation and environment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md).    
 Alternatively, run:  
 ```
 pip install git+https://github.com/JohnGiorgi/seq2rel.git
@@ -86,7 +86,7 @@ split.y that contains
 the relationship between raredisease tarsal tunnel syndrome and anaphor "the disorder" is antecedent.
 ```
 
-The pre-processed data can also be found [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
+A sample pre-processed data can be found [here](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data)
 
 ### Training  
 
@@ -96,7 +96,7 @@ Git clone the BioGPT repo
 !git clone https://github.com/microsoft/BioGPT.git
 ```  
 
-and then follow the original GitHub repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT) or run the following cell.
+and then follow the original GitHub repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT) or run the following cells.
 ```  
 !git clone https://github.com/pytorch/fairseq  
 import os
@@ -210,6 +210,12 @@ We use the same JSON files we created earlier using [BioGPT/scripts/data_prepara
 Run [BioMedLM/scripts/databuilder](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/databuilder) to build the files required to train BioMedLM. Notice, this python file is similar to [BioGPT/scripts/data_preparation](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) and generates same files but with different extensions. This script will generate split.pmid, split.source, and split.target for train, dev and test repectively as mentioned in the original github repo.
 
 ### 2. Configuration & Model Training
+
+Git clone the repo  
+```
+https://github.com/stanford-crfm/BioMedLM.git
+```  
+
 Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum). Deepspeed config for cpu offloading is present here
 
 Go to ./textgen/gpt2. To finetune, run:
