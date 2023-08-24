@@ -211,6 +211,11 @@ Run [BioMedLM/scripts/databuilder](https://github.com/shashank140195/Raredis/tre
 
 ### 2. Configuration & Model Training
 
+Install deepseed
+```  
+pip install deepspeed
+```  
+
 Git clone the repo  
 ```
 !git clone https://github.com/stanford-crfm/BioMedLM.git
