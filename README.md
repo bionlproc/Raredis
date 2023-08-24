@@ -98,3 +98,13 @@ The pre processed data can also be found [here](https://github.com/shashank14019
 !bash preprocess.sh
 ```  
 The above command will create 1 more folder named "relis-bin" under the same folder as raw path.
+
+5. Run train.sh to begin training the model
+```
+!bash train.sh
+```  
+
+6. After training run infer.sh
+```
+!bash infer.sh
+```
