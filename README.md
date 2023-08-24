@@ -195,3 +195,11 @@ Run [BioGPT/scripts/eval/eval_per_rel_type.py](https://github.com/shashank140195
 
 ## BioMedLM (Former PubMedGPT)
 We use [Lambda Labs](https://lambdalabs.com/?matchtype=p&adgroup=55786367910&feeditemid=&loc_interest_ms=&loc_physical_ms=9014313&network=g&device=c&devicemodel=&adposition=&utm_source=google&utm_campaign=Google_Search_Brand&utm_medium=search&utm_term=lambda%20labs&utm_content=308377104950&hsa_acc=1731978716&hsa_cam=1054662654&hsa_grp=55786367910&hsa_ad=308377104950&hsa_src=g&hsa_tgt=kwd-315332575824&hsa_kw=lambda%20labs&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw_5unBhCMARIsACZyzS00NLOnqMDfJtP3WMME-CkkQRYstbA5I_TXGsfx7K2nLb7nMW0bCxQaAnUwEALw_wcB) to use 1 A100 GPU to train [BioMedLM](https://huggingface.co/stanford-crfm/BioMedLM) by Stanford
+
+We follow the same guidelines to prepare data and for training provided at [BioMedLM's author's github](https://github.com/stanford-crfm/BioMedLM/tree/main/finetune) for NLG task.  
+
+1. ### Data Prep  
+We use the same JSON files we created earlier using [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to build the data required for BioMedLM.  
+
+Run BioMedLM/scripts/databuilder to build the files required to train BioMedLM. Notice, this file is similar to [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) and generates same files but with different extensions. This script will generate split.pmid, split.source, and split.target for train, dev and test repectively. Alternatively you can use pre-processed data from BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum.
+
