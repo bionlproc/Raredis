@@ -109,7 +109,11 @@ The above command will create 1 more folder named "relis-bin" under the same fol
 !bash train.sh
 ```  
 
-6. After training run infer.sh
+6. After training run infer.sh. This script run inference on the test.txt and generates .detok file
 ```
 !bash infer.sh
-```
+```  
+
+7. Post processing  
+After inference, run the [BioGPT/scripts/postprocess](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/postprocess) to fetch the inference in the desired json format.
+
