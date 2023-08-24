@@ -87,8 +87,14 @@ The pre processed data can also be found [here](https://github.com/shashank14019
 
 ### Training  
 
-The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.  
+1. The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.  
 
-Create a folder name "Raredis" under the data subfolder in the BioGPT path and paste the [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) inside it.
+2. Create a folder name "Raredis" under the data subfolder in the BioGPT path and paste the [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it.
 
-Copy the [Re-Raredis](https://github.com/shashank140195/Raredis/tree/main/BioGPT/RE-Raredis) under the subfolder "examples" in the BioGPT path.
+3. Copy the [Re-Raredis](https://github.com/shashank140195/Raredis/tree/main/BioGPT/RE-Raredis) under the subfolder "examples" in the BioGPT path.  
+
+4. Run [preprocess.sh](https://github.com/shashank140195/Raredis/blob/main/BioGPT/RE-Raredis/preprocess.sh)  
+```
+!bash preprocess.sh
+```  
+The above command will create 1 more folder named "relis-bin" under the same folder as raw path.
