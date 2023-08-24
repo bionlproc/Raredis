@@ -121,7 +121,7 @@ You can also follow our Google Colab working directory to follow the code for in
 
 ### 2. Model Download
 
-1. The link to the pre-trained BioGPT and BioGPT large is provided on the original GitHub repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL doesn't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.    
+1. The link to the pre-trained BioGPT and BioGPT large is provided on the original GitHub repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL doesn't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive and save in your local/gdrive.    
 ```
 os.chdir("/content/BioGPT/")
 os.mkdir("checkpoints")
@@ -145,7 +145,7 @@ The model path hierarchy should look like this:
 <img width="278" alt="Screenshot 2023-08-24 at 12 31 10 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/0b407e6e-2485-43f9-bf76-f36408337cfa">
 
 
-2. Create a folder named "Raredis" under the data subfolder in the BioGPT path and paste the raw folder [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it or alternatively you can choose different files from [pre processed](https://github.com/shashank140195/Raredis/tree/main/BioGPT/Preprocessed_data) directory. 
+2. Create a folder named "Raredis" under the data subfolder in the BioGPT path and paste the raw folder [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it or alternatively you can choose different raw files from [pre processed](https://github.com/shashank140195/Raredis/tree/main/BioGPT/Preprocessed_data) directory. 
 ``` 
 os.chdir("/content/BioGPT/data")
 os.mkdir("Raredis")
@@ -157,9 +157,6 @@ The file tree should look like this:
 
 <img width="314" alt="Screenshot 2023-08-24 at 12 41 21 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/98b0f362-9a76-4db4-96e1-6297d9ab6f55">
 
-
-# change the path to your actual raw path
-%cp -av "content/drive/Mydrive/raw" "/content/BioGPT/data/Raredis/"
 
 3. Copy the [Re-Raredis](https://github.com/shashank140195/Raredis/tree/main/BioGPT/RE-Raredis) under the subfolder "examples" in the BioGPT path.  
 
