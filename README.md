@@ -145,7 +145,7 @@ The model path hierarchy should look like this:
 <img width="278" alt="Screenshot 2023-08-24 at 12 31 10 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/0b407e6e-2485-43f9-bf76-f36408337cfa">
 
 
-2. Create a folder named "Raredis" under the data subfolder in the BioGPT path and paste the raw folder [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it. 
+2. Create a folder named "Raredis" under the data subfolder in the BioGPT path and paste the raw folder [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it or alternatively you can choose different files from [pre processed](https://github.com/shashank140195/Raredis/tree/main/BioGPT/Preprocessed_data) directory. 
 ``` 
 os.chdir("/content/BioGPT/data")
 os.mkdir("Raredis")
