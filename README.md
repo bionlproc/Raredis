@@ -149,6 +149,8 @@ The model path hierarchy should look like this:
 ``` 
 os.chdir("/content/BioGPT/data")
 os.mkdir("Raredis")
+
+# command to copy files created from rel_is_preprocess.py (.pmid, .x and.y files)
 %cp -av "content/drive/Mydrive/raw" "/content/BioGPT/data/Raredis/"
 ```
 File should look like this:  
