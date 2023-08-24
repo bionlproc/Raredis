@@ -216,8 +216,8 @@ deepspeed finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/outpu
   --per_device_eval_batch_size 1 \
   --save_strategy steps \
   --do_eval \
-  --train_data_file /home/ubuntu/BioMedLM/finetune/textgen/gpt2/data/meqsum/train.source \
-  --eval_data_file /home/ubuntu/BioMedLM/finetune/textgen/gpt2/data/meqsum/valid.source \
+  --train_data_file /home/ubuntu/BioMedLM/finetune/textgen/data/meqsum/train.source \
+  --eval_data_file /home/ubuntu/BioMedLM/finetune/textgen/data/meqsum/valid.source \
   --max_source_length 510 \
   --train_max_target_length 500 \
   --save_total_limit 5 \
