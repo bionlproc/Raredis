@@ -184,7 +184,7 @@ The above command will create 1 more folder named "relis-bin" under the same fol
 6. After training run infer.sh. This script runs inference on the test.txt and generates a .detok file
 ```
 !bash infer.sh
-```
+```  
 <img width="405" alt="Screenshot 2023-08-24 at 1 32 30 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/0b108476-9163-4086-8bb9-e629ba59cd48">  
 
 7. Post-processing  
