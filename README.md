@@ -3,15 +3,15 @@
 This repository contains code for our paper:  Comparison of pipeline, sequence-to-sequence, and generative language models for end-to-end relation extraction: experiments with the rare disease use-case.
 
 # Dataset
-The full modified dataset is availabe at this [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing).
+The full modified dataset is available at this [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing).
 
 
 ## Seq2rel
 ### 1. Preparing the environment
-Please follow original seq2rel repo for installation and envioment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
+Please follow the original seq2rel repo for installation and environment preparation guidelines [here](https://github.com/JohnGiorgi/seq2rel/blob/main/README.md)  
 
 ### 2. Prepare data
-We follow the same linearization schema as original author.  
+We follow the same linearization schema as the original author.  
 Datasets are tab-separated files where each example is contained on its own line. The first column contains the text, and the second column contains the relations. Relations themselves must be serialized to strings.
 
 ```
@@ -42,7 +42,7 @@ allennlp train "training_config/raredis.jsonnet" \
 ```
 
 The best model checkpoint (measured by micro-F1 score on the validation set), vocabulary, configuration, and log files will be saved to `--serialization-dir`. This can be changed to any directory you like. You can also follow
-our model train google collab file here [link](https://colab.research.google.com/drive/1sShXyD-E9CnHZKzk7ZhJekqlRdPd6IqH?usp=sharing)  
+Our model train Google collab file here [link](https://colab.research.google.com/drive/1sShXyD-E9CnHZKzk7ZhJekqlRdPd6IqH?usp=sharing)  
 
 ### 4. Evaluation
 For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/Seq2rel). Make sure you change the path to the trained model and gold test file.
@@ -117,11 +117,11 @@ Sacremoses
 !pip install sacremoses
 !pip install tensorboardX
 ```  
-You can also follow our google colab working directory to follow the code for installation steps [here](https://colab.research.google.com/drive/1sMAbgWi-paABrweJO_fe5edz1r2uAEPZ?usp=sharing).
+You can also follow our Google Colab working directory to follow the code for installation steps [here](https://colab.research.google.com/drive/1sMAbgWi-paABrweJO_fe5edz1r2uAEPZ?usp=sharing).
 
 ### 2. Model Download
 
-1. The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.    
+1. The link to the pre-trained BioGPT and BioGPT large is provided on the original GitHub repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL doesn't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.    
 ```
 os.chdir("/content/BioGPT/")
 os.mkdir("checkpoints")
@@ -130,7 +130,7 @@ os.chdir("checkpoints")
 !tar -zxvf Pre-trained-BioGPT.tgz
 ```
 
-if the above URL doesn't work, (sometimes public access error), try running below code to copy the BioGPT model from google drive to google colab
+if the above URL doesn't work, (sometimes public access error), try running the below code to copy the BioGPT model from your Google Drive to Google Collab
 ```
 os.chdir("/content/BioGPT/")
 os.mkdir("checkpoints")
@@ -140,6 +140,10 @@ os.mkdir("Pre-trained-BioGPT")
 # copy the model checkpoint from google drive
 %cp -av "/content/drive/MyDrive/BioGPT/pre_trained_model_med/checkpoint.pt" "/content/BioGPT/checkpoints/Pre-trained-BioGPT"
 ```
+
+The model path hierarchy should look like this:
+<img width="278" alt="Screenshot 2023-08-24 at 12 31 10 PM" src="https://github.com/shashank140195/Raredis/assets/69673535/0b407e6e-2485-43f9-bf76-f36408337cfa">
+
 
 2. Create a folder name "Raredis" under the data subfolder in the BioGPT path and paste the [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it.
 
