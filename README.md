@@ -194,9 +194,9 @@ After inference, run the [BioGPT/scripts/postprocess](https://github.com/shashan
 Run [BioGPT/scripts/eval/eval_per_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/eval) to get the overall and individual relation type scores.
 
 ## BioMedLM (Former PubMedGPT)
-We use [Lambda Labs](https://lambdalabs.com/?matchtype=p&adgroup=55786367910&feeditemid=&loc_interest_ms=&loc_physical_ms=9014313&network=g&device=c&devicemodel=&adposition=&utm_source=google&utm_campaign=Google_Search_Brand&utm_medium=search&utm_term=lambda%20labs&utm_content=308377104950&hsa_acc=1731978716&hsa_cam=1054662654&hsa_grp=55786367910&hsa_ad=308377104950&hsa_src=g&hsa_tgt=kwd-315332575824&hsa_kw=lambda%20labs&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw_5unBhCMARIsACZyzS00NLOnqMDfJtP3WMME-CkkQRYstbA5I_TXGsfx7K2nLb7nMW0bCxQaAnUwEALw_wcB) to use 1 A100 GPU to train [BioMedLM](https://huggingface.co/stanford-crfm/BioMedLM) by Stanford
+We use [Lambda Labs](https://lambdalabs.com/?matchtype=p&adgroup=55786367910&feeditemid=&loc_interest_ms=&loc_physical_ms=9014313&network=g&device=c&devicemodel=&adposition=&utm_source=google&utm_campaign=Google_Search_Brand&utm_medium=search&utm_term=lambda%20labs&utm_content=308377104950&hsa_acc=1731978716&hsa_cam=1054662654&hsa_grp=55786367910&hsa_ad=308377104950&hsa_src=g&hsa_tgt=kwd-315332575824&hsa_kw=lambda%20labs&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw_5unBhCMARIsACZyzS00NLOnqMDfJtP3WMME-CkkQRYstbA5I_TXGsfx7K2nLb7nMW0bCxQaAnUwEALw_wcB) to train [BioMedLM](https://huggingface.co/stanford-crfm/BioMedLM) by Stanford on 1 A100 GPU
 
-We follow the same guidelines to prepare data and for training provided at [BioMedLM's author's github](https://github.com/stanford-crfm/BioMedLM/tree/main/finetune) for NLG task.  
+We follow the same guidelines to prepare data and for model training provided at [BioMedLM's author's github](https://github.com/stanford-crfm/BioMedLM/tree/main/finetune) for NLG task.  
 
 1. ### Data Prep  
 We use the same JSON files we created earlier using [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to build the data required for BioMedLM.  
