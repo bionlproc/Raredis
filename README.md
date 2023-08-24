@@ -50,16 +50,8 @@ For overall and per relation score, run [Seq2rel/eval_rel_type.py](https://githu
 
 ## BioGPT
 All the Experiments are done in google colab pro+ using A100 GPU.
-### 1. Requirements and Installation
-Git clone the BioGPT repo 
-```  
-!git clone https://github.com/microsoft/BioGPT.git
-```  
 
-and then follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT).  
-You can also follow our google colab working directory to follow the code for installation steps [here](https://colab.research.google.com/drive/1sMAbgWi-paABrweJO_fe5edz1r2uAEPZ?usp=sharing).
-
-### 2. Data Prep
+### 1. Data Prep
 1. First run the [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to convert the raw files in the JSON format. This script adds/removes the instruction to the input sequence and add/removes entity type for the target sequence.  
 2. Run [BioGPT/scripts/data_preparation/rel_is_preprocess.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to pre process the JSON data in rel-is input format. This will output .pmid, .x and .y files for each split.   
 split.pmid: It contains the document name  
@@ -92,7 +84,51 @@ The pre processed data can also be found [here](https://github.com/shashank14019
 
 ### Training  
 
-1. The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.  
+### 1. Requirements and Installation
+Git clone the BioGPT repo 
+```  
+!git clone https://github.com/microsoft/BioGPT.git
+```  
+
+and then follow the original github repo to install the necessary libraries to work with BioGPT [here](https://github.com/microsoft/BioGPT) or run the following cell.
+```  
+!git clone https://github.com/pytorch/fairseq  
+import os
+os.chdir("/content/fairseq")
+!git checkout v0.12.0
+!pip install .
+!python setup.py build_ext --inplace
+```  
+Moses
+```
+os.chdir("/content/BioGPT")
+!git clone https://github.com/moses-smt/mosesdecoder.git
+!export MOSES=${PWD}/mosesdecoder
+```
+FastBPE
+```
+!git clone https://github.com/glample/fastBPE.git
+!export FASTBPE=${PWD}/fastBPE
+os.chdir("fastBPE")
+!g++ -std=c++11 -pthread -O3 fastBPE/main.cc -IfastBPE -o fast
+```
+Sacremoses
+```
+!pip install sacremoses
+!pip install tensorboardX
+```  
+You can also follow our google colab working directory to follow the code for installation steps [here](https://colab.research.google.com/drive/1sMAbgWi-paABrweJO_fe5edz1r2uAEPZ?usp=sharing).
+
+### 2. Model Download
+
+1. The link to the pre-trained BioGPT and BioGPT large is provided on the original github repo [here](https://github.com/microsoft/BioGPT). We observed that sometimes the URL does't work so alternatively you can use [this link to download BioGPT medium](https://drive.google.com/file/d/1niani8rR_Wgtu-62I0OXDPFW1izW_ZCw/view?usp=drive_link)(4GB) or [this link to download BioGPT large](https://drive.google.com/file/d/16r614gaXllWq9zJvK437zoHs9yMpztNl/view?usp=drive_link)(18GB) from our google drive.    
+```
+os.chdir("/content/BioGPT/")
+os.mkdir("checkpoints")
+os.chdir("checkpoints")
+!wget https://msramllasc.blob.core.windows.net/modelrelease/BioGPT/checkpoints/Pre-trained-BioGPT.tgz
+!tar -zxvf Pre-trained-BioGPT.tgz
+```
 
 2. Create a folder name "Raredis" under the data subfolder in the BioGPT path and paste the [BioGPT/data/raw](https://github.com/shashank140195/Raredis/tree/main/BioGPT/data) folder inside it.
 
