@@ -210,6 +210,10 @@ We use the same JSON files we created earlier using [BioGPT/scripts/data_prepara
 Run [BioMedLM/scripts/databuilder](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/databuilder) to build the files required to train BioMedLM. Notice, this python file is similar to [BioGPT/scripts/data_preparation](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) and generates same files but with different extensions. This script will generate split.pmid, split.source, and split.target for train, dev and test repectively as mentioned in the original github repo.
 
 ### 2. Configuration & Model Training
+Install accelerate
+```  
+pip install accelerate
+```    
 
 Install deepseed
 ```  
@@ -220,6 +224,8 @@ Git clone the repo
 ```
 !git clone https://github.com/stanford-crfm/BioMedLM.git
 ```  
+
+After cloning the BioMedLM repo, copy the [train_contol](https://github.com/XiangLi1999/PrefixTuning/tree/cleaned/gpt2) file and put it under gpt2 folder.    
 
 Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum). Deepspeed config for cpu offloading is present [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/deepspeed_config).
 
