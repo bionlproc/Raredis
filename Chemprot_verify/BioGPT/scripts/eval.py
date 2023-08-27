@@ -3,9 +3,9 @@ import pandas as pd
 
 true_positive_sum, pred_sum, true_sum = 0, 0, 0
 
-pred_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/wo_ent_type/svo/generate_checkpoint_last.pt.detok.extracted.json"
-gold_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/wo_ent_type/test.json"
-pmids_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/wo_ent_type/svo/data/relis_test.pmid"
+pred_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/generate_checkpoint_last.pt.detok.extracted.json"
+gold_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/test.json"
+pmids_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/data/relis_test.pmid"
 
 
 def do_eval(preds, pmids, golden):
@@ -202,7 +202,7 @@ def do_eval(preds, pmids, golden):
 
     #
     # df.to_csv(
-    #     "/Users/shashankgupta/Downloads/Chemprot/BioGPT/with_ent_type/rel-is/error_analysis_rel_type_last.csv", index=False)
+    #     "/Users/Downloads/Chemprot/BioGPT/with_ent_type/rel-is/error_analysis_rel_type_last.csv", index=False)
 
 
 preds = []
