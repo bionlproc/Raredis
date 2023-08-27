@@ -3,9 +3,9 @@ import pandas as pd
 
 true_positive_sum, pred_sum, true_sum = 0, 0, 0
 
-pred_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/generate_checkpoint_last.pt.detok.extracted.json"
-gold_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/test.json"
-pmids_file = "/Users/shashankgupta/Downloads/Chemprot/BioGPT/data/relis_test.pmid"
+pred_file = "/Users/Downloads/Chemprot/BioGPT/generate_checkpoint_last.pt.detok.extracted.json"
+gold_file = "/Users/Downloads/Chemprot/BioGPT/test.json"
+pmids_file = "/Users/Downloads/Chemprot/BioGPT/data/relis_test.pmid"
 
 
 def do_eval(preds, pmids, golden):
