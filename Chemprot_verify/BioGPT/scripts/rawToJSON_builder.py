@@ -130,12 +130,10 @@ table_res = test_rels
 # table_res = dev_rels
 
 final_doc = dict()
-with open('/Users/shashankgupta/Downloads/Chemprot/BioGPT/wo_ent_type/test.json', 'w') as outfile:
+with open('/Users/shashankgupta/Downloads/Chemprot/BioGPT/test.json', 'w') as outfile:
     for x in range(len(table_abs)):
         doc = table_abs["doc_key"][x]
         print(doc)
-        # if doc != 23214423:
-        #     continue
         title = table_abs["title"][x]
         abstract = table_abs["abstract"][x]
         context = title + " " + abstract
@@ -180,12 +178,12 @@ with open('/Users/shashankgupta/Downloads/Chemprot/BioGPT/wo_ent_type/test.json'
                 arg2_id = (selected_row["arg2"][k])[5:]
 
                 # with ent_Type
-                # arg1 = ent_info_dict[arg1_id]["type"] + " " + ent_info_dict[arg1_id]["span"]
-                # arg2 = ent_info_dict[arg2_id]["type"] + " " + ent_info_dict[arg2_id]["span"]
+                arg1 = ent_info_dict[arg1_id]["type"] + " " + ent_info_dict[arg1_id]["span"]
+                arg2 = ent_info_dict[arg2_id]["type"] + " " + ent_info_dict[arg2_id]["span"]
 
                 # w/o ent_type
-                arg1 = ent_info_dict[arg1_id]["span"]
-                arg2 = ent_info_dict[arg2_id]["span"]
+                # arg1 = ent_info_dict[arg1_id]["span"]
+                # arg2 = ent_info_dict[arg2_id]["span"]
 
                 rel_type = (selected_row["rel_type"][k]).lower()
 
