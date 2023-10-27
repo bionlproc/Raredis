@@ -298,7 +298,7 @@ python finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/output_d
   --adam_beta2 0.98
 ```  
 
-### 3. Inference
+### 3. Prediction
 
 Make sure you add the correct validation.source path in the run_generation_batch.py file. 
 
