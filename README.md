@@ -267,7 +267,6 @@ deepspeed finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/outpu
   --adam_beta2 0.98
 ``` -->
 
-
 ```
 python finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/output_dir \
   --model_name_or_path stanford-crfm/BioMedLM \
@@ -298,7 +297,8 @@ python finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/output_d
   --greater_is_better True \
   --adam_beta2 0.98
 ```  
-
+### Best validation checkpoint
+We save the each checkpoint created during training and manually selected the best checkpoint based on validation dataset F1 score ousing the eval script
 ### 3. Inference
 
 After finetuning, run generation on test set by:

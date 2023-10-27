@@ -4,8 +4,8 @@ import re
 
 true_positive_sum, pred_sum, true_sum = 0, 0, 0
 
-gold_file = "/Users/shashankgupta/Documents/Raredis/BioMedLM/generated_dir_6_550_high/test_gold.txt"
-prediction_file = "/Users/shashankgupta/Documents/Raredis/BioMedLM/generated_dir_6_550_high/test_beam.txt"
+gold_file = "Path to generated/test_gold.txt"
+prediction_file = "/Path to generated/test_beam.txt"
 
 def split_sentence(line):
     sentences = re.split(r"; ", line)
@@ -23,18 +23,18 @@ def convert_relis_sentence(sentence):
             rel = "is_a"
         elif relation == "producer":
             rel = "produces"
-        elif relation == "synonyms":
+        elif relation == "synonym":
             rel = "is_synon"
         elif relation == "acronym":
             rel = "is_acron"
-        elif relation == "heightens":
+        elif relation == "risk factor":
             rel = "increases_risk_of"
         elif relation == "antecedent":
             rel = "anaphora"
 
         ans = (segs[0].strip(), rel, segs[1].strip())
 
-    elif sentence == "no relations":
+    elif sentence == "there are no relations in the abstract":
         ans = ("", "no relations", "")
     return ans
 
@@ -249,9 +249,9 @@ def do_eval(preds, golden):
     print("Overall F-score is: ", F_overall)
 
 
-    df.to_csv(
-        "/Users/shashankgupta/Documents/Raredis/BioMedLM/generated_dir_6_550_high/error_analysis_rel_type_latest.csv",
-        index=False)
+    # df.to_csv(
+    #     "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/without_token_copy_instruction/with_ent_type/rel_is/results/temp350/error_analysis_rel_type_latest.csv",
+    #     index=False)
 
 gold_lines = []
 with open(gold_file, "r", encoding="utf8") as fr:

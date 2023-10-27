@@ -4,8 +4,8 @@ import re
 
 true_positive_sum, pred_sum, true_sum = 0, 0, 0
 
-gold_file = "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/token_copy_instruction/with_ent_type/natural_language/results/temp50/test_gold.txt"
-prediction_file = "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/token_copy_instruction/with_ent_type/natural_language/results/temp50/test_beam.txt"
+gold_file = "Path to generated/test_gold.txt"
+prediction_file = "/Path to generated/test_beam.txt"
 
 def split_sentence(line):
     sentences = re.split(r"; ", line)
@@ -60,7 +60,7 @@ def convert_relis_sentence(sentence):
         enttype2 = is_a[3].strip()
         ans = (enttype1 + " " + is_a[1].strip(), "is_a", enttype2 + " " + is_a[2].strip())
 
-    elif sentence.strip() == "no relations present in the abstract":
+    elif sentence.strip() == "there are no relations in the abstract":
         ans = ("", "no relations", "")
 
     return ans
@@ -276,9 +276,9 @@ def do_eval(preds, golden):
     print("Overall F-score is: ", F_overall)
 
 
-    df.to_csv(
-        "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/token_copy_instruction/with_ent_type/natural_language/results/temp50/error_analysis_rel_type_latest.csv",
-        index=False)
+    # df.to_csv(
+    #     "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/without_token_copy_instruction/with_ent_type/natural_language/data/temp550/error_analysis_rel_type_latest.csv",
+    #     index=False)
 
 gold_lines = []
 with open(gold_file, "r", encoding="utf8") as fr:
