@@ -1,7 +1,8 @@
 import os
 import json
 
-data_dir = "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/without_token_copy_instruction/with_ent_type"
+#Path to json files
+data_dir = "/Users/shashankgupta/Documents/Raredis/BioMedLM/"
 
 
 def sort_triples(triples, text):
@@ -14,7 +15,7 @@ def build_target_seq_relis(triples):
     for z in triples:
         rel = z["rel"].lower()
         if rel == "no relation":
-            answer = "no relations present in the abstract; "
+            answer = "there are no relations in the abstract; "
 
         else:
             arg1 = z["arg1"].lower()
@@ -24,8 +25,6 @@ def build_target_seq_relis(triples):
                 type1 = "rare disease"
             elif type1 == "skinraredisease":
                 type1 = "rare skin disease"
-            elif type1 == "sign":
-                type1 = "sign"
 
             arg2 = z["arg2"].lower()
             list2 = arg2.split()
@@ -34,8 +33,6 @@ def build_target_seq_relis(triples):
                 type2 = "rare disease"
             elif type2 == "skinraredisease":
                 type2 = "rare skin disease"
-            elif type2 == "sign":
-                type2 = "sign"
 
             if rel == "produces":
                 answer += f"{' '.join(list1[1:])} is a {type1} that {rel} {' '.join(list2[1:])}, as a {type2}; "
@@ -151,5 +148,5 @@ def worker(fname, prefix, fn):
 
 
 for split in ['train', 'valid', 'test']:
-    worker(os.path.join(f"{data_dir}", f"{split}.json"), os.path.join(f"{data_dir}", f"relis_{split}"),
+    worker(os.path.join(f"{data_dir}", f"{split}.json"), os.path.join(f"{data_dir}", split),
            build_target_seq_relis)

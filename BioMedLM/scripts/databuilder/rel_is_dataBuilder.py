@@ -1,7 +1,8 @@
 import os
 import json
 
-data_dir = "/Users/shashankgupta/Documents/Raredis/BioMedLM/same_data_as_bioGPT/token_copy_instruction/with_ent_type/"
+#Path to json files
+data_dir = "/Users/shashankgupta/Documents/Raredis/BioMedLM/"
 
 
 def sort_triples(triples, text):
@@ -14,7 +15,7 @@ def build_target_seq_relis(triples):
     for z in triples:
         rel = z["rel"].lower()
         if rel == "no relation":
-            answer = "no relations; "
+            answer = "there are no relations in the abstract; "
 
         else:
             arg1 = z["arg1"].lower()
@@ -28,13 +29,13 @@ def build_target_seq_relis(triples):
                 answer += f"the relationship between {arg1} and {arg2} is producer; "
 
             elif rel == "is_synon":
-                answer += f"the relationship between {arg1} and {arg2} is synonyms; "
+                answer += f"the relationship between {arg1} and {arg2} is synonym; "
 
             elif rel == "is_acron":
                 answer += f"the relationship between {arg1} and {arg2} is acronym; "
 
             elif rel == "increases_risk_of":
-                answer += f"the relationship between {arg1} and {arg2} is heightens; "
+                answer += f"the relationship between {arg1} and {arg2} is risk factor; "
 
             elif rel == "anaphora":
                 answer += f"the relationship between {arg1} and {arg2} is antecedent; "

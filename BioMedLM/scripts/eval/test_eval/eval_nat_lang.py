@@ -14,7 +14,6 @@ def split_sentence(line):
 def get_original_ent_type(enttype):
     enttype = enttype.replace("rare disease", "raredisease")
     enttype = enttype.replace("rare skin disease", "skinraredisease")
-    enttype = enttype.replace("signs", "sign")
 
     return enttype
 
