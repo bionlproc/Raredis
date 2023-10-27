@@ -139,8 +139,7 @@ def do_eval(preds, golden, folder_path):
     return Fscore
 
 
-directory = "/Users/shashankgupta/Documents/Raredis/BioMedLM/Experiment2/Dataset/token_copy_instruction/with_ent_type" \
-            "/natural_language/results_h100/copy_nat_lang_predictions/"
+directory = "/Users/copy_nat_lang_predictions/"
 folders = os.listdir(directory)
 folders = sorted(folders, key=lambda x: int(x.split('-')[1]) if x.startswith('checkpoint-') else 0)
 max_fscore = 0
