@@ -1,7 +1,7 @@
 import os
 import json
 
-data_dir = "path to save pre process files"
+data_dir = "path to save pre process json files"
 
 
 def sort_triples(triples, text):
