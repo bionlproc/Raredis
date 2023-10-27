@@ -310,9 +310,9 @@ python -u run_generation_batch.py --max_source_length -1 --length 510 --model_na
 ### Best checkpoint
 We save the each checkpoint created during training and manually selected the best checkpoint based on validation dataset F1 score using the eval script [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/eval/validation_eval). We select the best checkpoint when validation F1 score did not improve after 5 checkpoints (Patience = 5)
 
-Once you select the best checkpoint based on validation F1 score, change the validation.source path in the run_generation_batch.py file to your test.source and again run below command with best checkkpoint saved:  
+Once you select the best checkpoint based on validation F1 score, change the validation.source path in the run_generation_batch.py file to your test.source path and again run below command with best checkpoint saved:  
   
-  ```
+```
 python -u run_generation_batch.py --max_source_length -1 --length 510 --model_name_or_path=best_validation_ checkpoint_path --num_return_sequences 1 --stop_token [SEP] --tokenizer_name=best_validation_ checkpoint_path --task_mode=raredis --control_mode=no --tuning_mode finetune --gen_dir user/output_dir --batch_size 1 --temperature 1.0
 ``` 
 
