@@ -297,14 +297,20 @@ python finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/output_d
   --greater_is_better True \
   --adam_beta2 0.98
 ```  
-### Best validation checkpoint
-We save the each checkpoint created during training and manually selected the best checkpoint based on validation dataset F1 score ousing the eval script
+
 ### 3. Inference
 
-After finetuning, run generation on test set by:
+Make sure you add the correct validation.source path in the run_generation_batch.py file. 
+
+After finetuning, run generation on validation set for each checkpoint saved by running:
 ```
-python -u run_generation_batch.py --max_source_length -1 --length 510 --model_name_or_path={finetune_checkpoint} --num_return_sequences 1 --stop_token [SEP] --tokenizer_name={finetune_checkpoint} --task_mode=meqsum --control_mode=no --tuning_mode finetune --gen_dir /home/ubuntu/BioMedLM/temp500 --batch_size 1 --temperature 1.0
+python -u run_generation_batch.py --max_source_length -1 --length 510 --model_name_or_path=finetune_checkpoint_path --num_return_sequences 1 --stop_token [SEP] --tokenizer_name=finetune_checkpoint_path --task_mode=raredis --control_mode=no --tuning_mode finetune --gen_dir user/output_dir --batch_size 1 --temperature 1.0
 ``` 
+
+### Best validation checkpoint
+We save the each checkpoint created during training and manually selected the best checkpoint based on validation dataset F1 score using the eval script with _validation [here] (https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/eval)
+
+
 
 Above code will generate test_beam.txt and test_gold.txt. Save these files to run evaluation.
 
