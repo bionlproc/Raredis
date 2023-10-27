@@ -200,16 +200,28 @@ After inference, run the [BioGPT/scripts/postprocess](https://github.com/shashan
 Run [BioGPT/scripts/eval/eval_per_rel_type.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/eval) to get the overall and individual relation type scores.
 
 ## BioMedLM (Former PubMedGPT)
-We use [Lambda Labs](https://lambdalabs.com/?matchtype=p&adgroup=55786367910&feeditemid=&loc_interest_ms=&loc_physical_ms=9014313&network=g&device=c&devicemodel=&adposition=&utm_source=google&utm_campaign=Google_Search_Brand&utm_medium=search&utm_term=lambda%20labs&utm_content=308377104950&hsa_acc=1731978716&hsa_cam=1054662654&hsa_grp=55786367910&hsa_ad=308377104950&hsa_src=g&hsa_tgt=kwd-315332575824&hsa_kw=lambda%20labs&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw_5unBhCMARIsACZyzS00NLOnqMDfJtP3WMME-CkkQRYstbA5I_TXGsfx7K2nLb7nMW0bCxQaAnUwEALw_wcB) to train [BioMedLM](https://huggingface.co/stanford-crfm/BioMedLM) by Stanford on 1 A100 GPU along with [Deepspeed](https://github.com/microsoft/DeepSpeed) for CPU offloading.
+We use [Lambda Labs](https://lambdalabs.com/?matchtype=p&adgroup=55786367910&feeditemid=&loc_interest_ms=&loc_physical_ms=9014313&network=g&device=c&devicemodel=&adposition=&utm_source=google&utm_campaign=Google_Search_Brand&utm_medium=search&utm_term=lambda%20labs&utm_content=308377104950&hsa_acc=1731978716&hsa_cam=1054662654&hsa_grp=55786367910&hsa_ad=308377104950&hsa_src=g&hsa_tgt=kwd-315332575824&hsa_kw=lambda%20labs&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw_5unBhCMARIsACZyzS00NLOnqMDfJtP3WMME-CkkQRYstbA5I_TXGsfx7K2nLb7nMW0bCxQaAnUwEALw_wcB) to train [BioMedLM](https://huggingface.co/stanford-crfm/BioMedLM) by Stanford on 1 H100 80GB GPU.
 
 We follow the same guidelines to prepare data and model training provided at [BioMedLM's author's github](https://github.com/stanford-crfm/BioMedLM/tree/main/finetune) for NLG (Seq2seq) task.  
 
 ### 1. Data Prep  
 We use the same JSON files we created earlier using [BioGPT/scripts/data_preparation/rawToJSON.py](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) to build the data required for BioMedLM input.  
 
-Run [BioMedLM/scripts/databuilder](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/databuilder) to build the files required to train BioMedLM. Notice, this python file is similar to [BioGPT/scripts/data_preparation](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) and generates same files but with different extensions. This script will generate split.pmid, split.source, and split.target for train, dev and test repectively as mentioned in the original github repo.
+Run [BioMedLM/scripts/databuilder](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/databuilder) to build the files required to train BioMedLM. Notice, this python file is similar to [BioGPT/scripts/data_preparation](https://github.com/shashank140195/Raredis/tree/main/BioGPT/scripts/data_preparation) and generates same files but with different extensions that were created in BioGPT files. This script will generate split.pmid, split.source, and split.target for train, dev and test repectively as mentioned in the original github repo.
 
 ### 2. Configuration & Model Training
+
+Git clone the repo  
+```
+!git clone https://github.com/stanford-crfm/BioMedLM.git
+```  
+
+After cloning the BioMedLM repo, copy the [train_contol](https://github.com/XiangLi1999/PrefixTuning/tree/cleaned/gpt2) file and put it under gpt2 folder.    
+
+Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum).
+
+<!-- ## For training on A100 with Deepspeed 
+
 Install accelerate
 ```  
 pip install accelerate
@@ -220,17 +232,10 @@ Install deepseed
 pip install deepspeed
 ```  
 
-Git clone the repo  
-```
-!git clone https://github.com/stanford-crfm/BioMedLM.git
-```  
-
-After cloning the BioMedLM repo, copy the [train_contol](https://github.com/XiangLi1999/PrefixTuning/tree/cleaned/gpt2) file and put it under gpt2 folder.    
-
-Make sure the task dataset is in ./textgen/data. The dataset folder should have <split>.source and <split>.target files. The .source file should contain the original text in a one example per line format and the .target file should contain the desired output in a one example per line format. See example [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/data/token_copy_instruction/with_ent_type/rel_is/data/meqsum). Deepspeed config for cpu offloading is present [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/deepspeed_config).
+ Deepspeed config for cpu offloading is present [here](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/deepspeed_config). -->
 
 Go to ./textgen/gpt2. To finetune, run:
-```
+<!-- ```
 deepspeed finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/output_dir\
   --model_name_or_path stanford-crfm/BioMedLM \
   --deepspeed /home/ubuntu/BioMedLM/finetune/deepspeed/cpu_offload.json \
@@ -252,7 +257,7 @@ deepspeed finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/outpu
   --seed 7 \
   --evaluation_strategy steps \
   --eval_steps 50 \
-  --num_train_epochs 15 \
+  --num_train_epochs 30 \
   --logging_steps 50 \
   --save_steps 50 \
   --logging_first_step \
@@ -260,7 +265,39 @@ deepspeed finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/outpu
   --metric_for_best_model eval_loss \
   --greater_is_better True \
   --adam_beta2 0.98
+``` -->
+
+
 ```
+python finetune_for_summarization.py --output_dir /home/ubuntu/BioMedLM/output_dir \
+  --model_name_or_path stanford-crfm/BioMedLM \
+  --tokenizer_name stanford-crfm/pubmed_gpt_tokenizer \
+  --per_device_train_batch_size 1 \
+  --per_device_eval_batch_size 1 \
+  --save_strategy steps \
+  --do_eval \
+  --train_data_file /home/ubuntu/BioMedLM/finetune/textgen/data/train.source \
+  --eval_data_file /home/ubuntu/BioMedLM/finetune/textgen/data//valid.source \
+  --max_source_length 510 \
+  --train_max_target_length 500 \
+  --save_total_limit 25 \
+  --overwrite_output_dir \
+  --gradient_accumulation_steps 16 \
+  --learning_rate 1e-5 \
+  --warmup_ratio 0.1 \
+  --weight_decay 0.01 \
+  --seed 7 \
+  --evaluation_strategy steps \
+  --eval_steps 50 \
+  --num_train_epochs 30 \
+  --logging_steps 50 \
+  --save_steps 50 \
+  --logging_first_step \
+  --load_best_model_at_end True \
+  --metric_for_best_model eval_loss \
+  --greater_is_better True \
+  --adam_beta2 0.98
+```  
 
 ### 3. Inference
 
