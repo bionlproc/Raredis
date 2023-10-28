@@ -1,0 +1,1 @@
+prediction_file = "/project/rvkavu2_uksr/sgu260/RareDis/PURE/outputs/under_512/BioBert/14/latest/relation/predictions.json"

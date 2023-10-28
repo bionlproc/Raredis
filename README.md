@@ -319,3 +319,8 @@ python -u run_generation_batch.py --max_source_length -1 --length 510 --model_na
 
 ### 4. Test Evaluation
 Run [BioMedLM/scripts/eval/test_eval/](https://github.com/shashank140195/Raredis/tree/main/BioMedLM/scripts/eval/test_eval) to run evaluation on predicted sequence. 
+
+
+## Pipeline
+
+For pipeline, we use the truncated documents (upto 512 tokens, BERT input limit) from [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing)
