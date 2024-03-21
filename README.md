@@ -324,3 +324,50 @@ Run [BioMedLM/scripts/eval/test_eval/](https://github.com/shashank140195/Raredis
 ## Pipeline
 
 For pipeline, we use the truncated documents (upto 512 tokens, BERT input limit) from [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing)
+
+## T5/Flan-T5
+
+### Training/valid/test data
+Data for the copy/No copy instruction for natural language/rel-is template can be found here: [link](https://github.com/shashank140195/Raredis/tree/main/T5)
+
+### Training
+The training script for both formats can be found here: [link](https://github.com/shashank140195/Raredis/tree/main/T5/Scripts/training)
+
+Command:
+```
+python PATH_TO_TRAINING_PYTHON_FILE \
+  --output_dir PATH_TO_OUTPUT_DIR \
+  --model_name_or_path t5-3b \
+  --tokenizer_name t5-3b \
+  --per_device_train_batch_size 1 \
+  --per_device_eval_batch_size 1 \
+  --gradient_accumulation_steps 16 \
+  --save_strategy steps \
+  --do_eval \
+  --overwrite_output_dir \
+  --learning_rate 3e-4 \
+  --warmup_ratio 0.1 \
+  --weight_decay 1e-5 \
+  --seed 7 \
+  --evaluation_strategy steps \
+  --eval_steps 200 \
+  --num_train_epochs 100 \
+  --logging_steps 200 \
+  --save_steps 200 \
+  --logging_first_step \
+  --load_best_model_at_end True \
+  --metric_for_best_model eval_f1 \
+  --save_total_limit=1 \
+  --greater_is_better True \
+  --adam_beta2 0.98 \
+  --predict_with_generate True \
+  --generation_num_beams 4 \
+  --prediction_loss_only False \
+  --generation_max_length 1024
+```
+
+### Inference
+ After training, you can run inference scripts from [link](https://github.com/shashank140195/Raredis/tree/main/T5/Scripts/inference) depending on the template you chose.
+
+ ### Evaluation
+ After inference, you can run evaluation scripts from [link](https://github.com/shashank140195/Raredis/tree/main/T5/Scripts/Evaluation) depending on the template you chose.

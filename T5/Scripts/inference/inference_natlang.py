@@ -4,13 +4,15 @@ import json
 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
-fine_tuned_model = "/home/ubuntu/T5/output/flan_t5_xl/checkpoint-1200"
+PATH_TO_TEST_JSON_FILE = ""
+fine_tuned_model = "PATH_TO_SAVED_CHECKPOINT"
 model = AutoModelForSeq2SeqLM.from_pretrained(fine_tuned_model)
+
+# Change tokenizer according to the model
 tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-xl")
 model = model.to(device)
 print("Loading test file")
-with open('/home/ubuntu/T5/data/nocopy_nat_lang/test.json', 'r') as file:
+with open(PATH_TO_TEST_JSON_FILE, 'r') as file:
     test_data = json.load(file)
 
 # Separate source and target texts
@@ -26,4 +28,4 @@ for i,x in enumerate(zip(test_source_texts,test_target_texts)):
     df = pd.concat([df, pd.DataFrame([{'source': x[0], "gold": x[1], 'prediction': prediction}])], ignore_index=True)
     print(i, prediction, "\n")
 
-df.to_csv("/home/ubuntu/T5/output/flan_t5_xl_2048/predictions/predictions.csv", index=False)
+df.to_csv("PATH_TO_SAVE_PREDICTION_FILE", index=False)
