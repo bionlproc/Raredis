@@ -1,5 +1,7 @@
 ## Run scripts
 
+Run zero-shot E2ERE on the test set.
+
 ```
 python main.py run
 --model {'gpt-4-1106-preview | o1'}
