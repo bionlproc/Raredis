@@ -28,8 +28,7 @@ along with the pair **sign** and **symptom**.
 
 ## Issues with discontinuous entities
 
-Discontinuous entities are particularly tricky and have led to several er-
-rors, even if the prediction is not incorrect, because the model was unable to split an entity conjunction into
+Discontinuous entities are particularly tricky and have led to several errors, even if the prediction is not incorrect, because the model was unable to split an entity conjunction into
 constituent entities. Consider the snippet: *“affected infants may exhibit abnormally long, thin fingers and toes
 and/or deformed (dysplastic) or absent nails at birth.”* Instead of generating relations with the two gold entities
 “abnormally long, thin fingers” and “abnormally long, thin toes”, the model simply created one relation with
@@ -38,8 +37,8 @@ and/or deformed (dysplastic) or absent nails at birth.”* Instead of generating
 ## BioMedLM generations not in the input
 
 In several cases we noticed spans that were not in the input but were
-nevertheless closely linked with the gold entity span’s meaning. For example, for the gold span “muscle twitch-
-ing”, BioMedLM predicted “muscle weakness”. It also tried to form meaningful noun phrases that capture the
+nevertheless closely linked with the gold entity span’s meaning. For example, for the gold span “muscle twitching”, 
+BioMedLM predicted “muscle weakness”. It also tried to form meaningful noun phrases that capture the
 meaning of longer gold spans. For instance, for the gold span “ability to speak impaired”, it predicted “difficulty
 in speaking”. For the gold span, “progressive weakness of the muscles of the legs” it outputs “paralysis of the
 legs”. All these lead to both FPs and FNs, unfortunately.
