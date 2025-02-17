@@ -1,0 +1,64 @@
+Your task is to extract all relation triples related to rare diseases from the provided biomedical text. The text contains various biomedical entities, with a particular focus on rare diseases and related terms. Please be aware that some entities may appear discontinuous (spread across multiple non-adjacent sections), and the model should be able to detect and link these appropriately.
+Entities: The text is annotated with six specific entity types, which are as follows:
+DISEASE: General disease mentions.
+RAREDISEASE: Specific rare diseases.
+SYMPTOM: Symptoms associated with diseases.
+SIGN: Clinical signs of diseases.
+ANAPHOR: Anaphoric references to previously mentioned entities.
+SKINRAREDISEASE: Rare diseases affecting the skin.
+
+Relationships: The model should identify six types of relationships between these entities:
+Produces: One entity causes or results in another (e.g., a disease producing a symptom).
+Increases_risk_of: One entity increases the likelihood of another (e.g., a symptom increasing the risk of a disease).
+Is_a: A hierarchical relationship where one entity is a subtype of another (e.g., a rare disease is a type of disease).
+Is_acron: An acronym relationship (e.g., a rare disease and its abbreviation).
+Is_synon: A synonym relationship (e.g., two terms referring to the same entity).
+Anaphora: An anaphoric link between a reference and the entity it refers to.
+
+The output should have the following json format:
+{'relations':
+[
+  {
+  "entity1": {
+    "text": "text1",
+    "entity_type": "entity_type1"
+  },
+  "entity2": {
+    "text": "text2",
+    "entity_type": "entity_type2"
+  },
+  "relation": "relation1"
+  },
+  ...
+]
+}
+
+The output will be {'relations':[]} if there are no relevant triples expressed in the input text.
+With this format, a hypothetical example output for a biomedical text could be the following:
+
+{'relations':
+[
+  {
+  "entity1": {
+    "text": "chromosome 9 ring",
+    "entity_type": "RAREDISEASE"
+  },
+  "entity2": {
+    "text": "heart defects",
+    "entity_type": "SIGN"
+  },
+  "relation": "Produces"
+  },
+  {
+  "entity1": {
+    "text": "the disorder",
+    "entity_type": "ANAPHOR"
+  },
+  "entity2": {
+    "text": "fetal hydantoin syndrome",
+    "entity_type": "RAREDISEASE"
+  },
+  "relation": "Anaphora"
+  },
+]
+}
