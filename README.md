@@ -371,3 +371,6 @@ python PATH_TO_TRAINING_PYTHON_FILE \
 
  ### Evaluation
  After inference, you can run evaluation scripts from [link](https://github.com/shashank140195/Raredis/tree/main/T5/Scripts/Evaluation) depending on the template you chose.
+
+# Supplementary Information
+Please click [here](https://github.com/bionlproc/Raredis/blob/main/Supplementary_info.md) for more information of the paper including predicate-specific analysis, error analysis and model configurations.
