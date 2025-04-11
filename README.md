@@ -3,7 +3,7 @@
 This repository contains code for our paper:  Comparison of pipeline, sequence-to-sequence, and generative language models for end-to-end relation extraction: experiments with the rare disease use-case.
 
 # Dataset
-The full modified dataset is available at this [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing). All pre-processed datasets are available at [here](https://drive.google.com/drive/folders/1jQtexIZ5w2isCuBq88V6-2MCSbqvHJkW?usp=share_link)
+The full modified dataset is available at this [link](https://drive.google.com/drive/folders/1XkfRKwWdrrV-wdzp9GdEXJHTHit9GbNi?usp=sharing). All pre-processed datasets are available at [here](https://drive.google.com/drive/folders/1jQtexIZ5w2isCuBq88V6-2MCSbqvHJkW?usp=share_link).
 
 
 ## Seq2rel
